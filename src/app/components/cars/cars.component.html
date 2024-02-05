@@ -17,12 +17,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="bg-body-tertiary">1</td>
-                <td class="bg-body-tertiary">Palio</td>
-                <td class="bg-body-tertiary">Fiat</td>
-                <td class="bg-body-tertiary">35000</td>
-                <td class="bg-body-tertiary">2000</td>
+            <tr *ngFor="let car of cars">
+                <td class="bg-body-tertiary">{{car.id}}</td>
+                <td class="bg-body-tertiary">{{car.name}}</td>
+                <td class="bg-body-tertiary">{{car.automaker}}</td>
+                <td class="bg-body-tertiary">{{car.price}}</td>
+                <td class="bg-body-tertiary">{{car.year}}</td>
                 <td class="bg-body-tertiary text-end">
                     <button class="btn btn-success me-2">Alterar</button>
                     <button class="btn btn-danger">Remover</button>
