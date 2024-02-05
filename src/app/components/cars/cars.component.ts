@@ -9,6 +9,7 @@ import { Car } from '../../car';
 export class CarsComponent {
 
   car: Car = {} as Car;
+  isUpdate: boolean = false;
   idCount: number = 4;
 
   //data
@@ -37,9 +38,23 @@ export class CarsComponent {
   ]
 
   saveCar() {
-    this.car.id = this.idCount;
-    this.idCount++;
-    this.cars.push(this.car);
+
+    if (!this.isUpdate) {
+      this.car.id = this.idCount;
+      this.idCount++;
+      this.cars.push(this.car);
+    }
+    
     this.car = {} as Car;
+    this.isUpdate = false;
+  }
+
+  update(selectedCar: Car) {
+    this.car = selectedCar;
+    this.isUpdate = true;
+  }
+
+  remove(car: Car) {
+    this.cars = this.cars.filter(c => c !== car);
   }
 }

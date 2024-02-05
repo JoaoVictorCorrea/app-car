@@ -24,8 +24,8 @@
                 <td class="bg-body-tertiary">{{car.price}}</td>
                 <td class="bg-body-tertiary">{{car.year}}</td>
                 <td class="bg-body-tertiary text-end">
-                    <button class="btn btn-success me-2">Alterar</button>
-                    <button class="btn btn-danger">Remover</button>
+                    <button class="btn btn-success me-2" (click)="update(car)">Alterar</button>
+                    <button class="btn btn-danger" (click)="remove(car)">Remover</button>
                 </td>
             </tr>
         </tbody>
